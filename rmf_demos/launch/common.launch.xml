@@ -10,6 +10,8 @@
   <arg name="headless" default="false" description="do not launch rviz; launch gazebo in headless mode"/>
   <arg name="bidding_time_window" description="Time window in seconds for task bidding process" default="2.0"/>
   <arg name="use_rmf_panel" default="true" description="launch web and api server for rmf_demos_panel"/>
+  <arg name="no_rviz" default="false" description="do not launch rviz"/>
+
 
   <!-- Traffic Schedule  -->
   <node pkg="rmf_traffic_ros2" exec="rmf_traffic_schedule" output="both" name="rmf_traffic_schedule_primary">
@@ -38,7 +40,7 @@
       <arg name="use_sim_time" value="$(var use_sim_time)"/>
       <arg name="map_name" value="$(var initial_map)"/>
       <arg name="viz_config_file" value ="$(var viz_config_file)"/>
-      <arg name="headless" value="$(var headless)"/>
+      <arg name="headless" value="$(var no_rviz)"/>
     </include>
   </group>
 

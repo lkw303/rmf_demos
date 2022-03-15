@@ -33,7 +33,9 @@ setup(
           'direct_patrol = rmf_demos_tasks.direct_patrol:main',
           'dispatch_teleop = rmf_demos_tasks.dispatch_teleop:main',
           'teleop_action = rmf_demos_tasks.teleop_action:main',
-          'dispatch_multi_stop = rmf_demos_tasks.dispatch_multi_stop:main'
+          'dispatch_multi_stop = rmf_demos_tasks.dispatch_multi_stop:main',
+          'dispatch_hello = rmf_demos_tasks.dispatch_hello:main',
+          'end_action = rmf_demos_tasks.end_action:main'
         ],
     },
 )
