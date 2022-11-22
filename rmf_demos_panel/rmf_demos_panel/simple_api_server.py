@@ -72,6 +72,13 @@ def submit():
         Task Submission: {json.dumps(request.json)}, error: {err_msg}")
     return jsonify({"task_id": task_id, "error_msg": err_msg})
 
+@app.route('/dispatch_task', methods=['POST'])
+def dispatch():
+    """REST Call to submit task"""
+    task_id, err_msg = dispatcher_client.dispatch_task_request(request.json)
+    logging.debug(f" ROS Time: {dispatcher_client.ros_time()} | \
+        Task Submission: {json.dumps(request.json)}, error: {err_msg}")
+    return jsonify({"task_id": task_id, "error_msg": err_msg})
 
 @app.route('/cancel_task', methods=['POST'])
 def cancel():
